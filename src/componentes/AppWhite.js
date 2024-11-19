@@ -1,18 +1,17 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-const AppLink = (props) => {
-    const color = props.color || 'blue';
+const AppWhite = (props) => {
+    const color = props.color || 'white';
     const title = props.title || '?title?';
 
     return (
         <TouchableOpacity onPress={props.onPress}>
             <View style={{ ...props.style, alignItems: 'center' }}>
-                <Text style={{ color: color }}>{title}</Text>
+                <Text style={{ color: color, fontSize: 18, fontWeight: 'bold' }}>{title}</Text>
             </View>
         </TouchableOpacity>
     );
 }
 
-
-export default AppLink;
+export default AppWhite;

@@ -1,4 +1,8 @@
-import { View, Button, StyleSheet, Text, TextInput, StatusBar, Pressable, Image } from "react-native";
+import React, { useState } from 'react';
+import AppButtonWhite from '../../componentes/AppButtonWhite';
+import styles from '../../../styles';
+import { Text, View, Image, TextInput } from 'react-native';
+import AppWhite from '../../componentes/AppWhite';
 
 const Dados = ({ navigation }) => {
   return (
@@ -6,183 +10,67 @@ const Dados = ({ navigation }) => {
 
     <View style={styles.container}>
       <View style={styles.b1}>
-        <View style={styles.b2}>
-
-
-          <View style={styles.input}>
-            <Text style={styles.fonte}>Projeto:</Text>
-            <Text style={styles.text1}>IFGecomp</Text>
-          </View>
-
-          <View style={styles.input1}>
-            <Text style={styles.fonte}>Vagas:</Text>
-            <Text style={styles.text2}>2 vagas</Text>
-          </View>
-
-          <View style={styles.input2}>
-            <Text style={styles.fonte}>Etapas:</Text>
-            <Text style={styles.text3}>3</Text>
-          </View>
-
-          <View style={styles.input3}>
-            <Text style={styles.fonte}>Criterios:</Text>
-            <Text style={styles.text4}>Trabalhor em equipe</Text>
-          </View>
-
-          <View style={styles.input4}>
-            <Text style={styles.fonte}>Descrição:</Text>
-          </View>
+        <View style={{ backgroundColor: '#4A5C6A', width: 450, height: 750, marginHorizontal: 25, borderRadius: 10 }}>
 
           <View>
             <Image
               source={require('../../../assets/imagens/ifg.png')}
-              style={styles.image}
+              style={{ height: 100, width: 130, marginLeft: 155, marginTop: 30, margin: 30 }}
             />
           </View>
 
-          <View>
-            <Text></Text>
+          <View style={{ backgroundColor: 'white', marginHorizontal: 20, margin: 10, padding: 5, marginLeft: 10, borderRadius: 10 }}>
+            <Text style={{ fontWeight: 'bold' }}>Projeto:</Text>
+            <Text style={{ marginLeft: 55, marginTop: -18 }}>IF-GECOMP</Text>
+          </View>
+
+          <View style={{ backgroundColor: 'white', marginHorizontal: 250, margin: 10, padding: 5, marginLeft: 10, borderRadius: 10 }}>
+            <Text style={{ fontWeight: 'bold' }}>Vagas:</Text>
+            <Text style={{ marginLeft: 50, marginTop: -18 }}>2 vagas</Text>
+          </View>
+
+          <View style={{ backgroundColor: 'white', marginHorizontal: 20, margin: 10, padding: 5, marginLeft: 240, borderRadius: 10, marginTop: -40 }}>
+            <Text style={{ fontWeight: 'bold' }}>Etapas:</Text>
+            <Text style={{ marginLeft: 55, marginTop: -18 }}>3</Text>
+          </View>
+
+          <View style={{ backgroundColor: 'white', marginHorizontal: 20, margin: 10, padding: 5, marginLeft: 10, borderRadius: 10, height: 70 }}>
+            <Text style={{ fontWeight: 'bold' }}>Criterios:</Text>
+            <Text style={{ marginLeft: 60, marginTop: -20 }}>Trabalhor em equipe</Text>
+          </View>
+
+          <View style={{ backgroundColor: 'white', marginHorizontal: 20, margin: 10, padding: 5, marginLeft: 10, borderRadius: 10, height: 80 }}>
+            <Text style={{ fontWeight: 'bold' }}>Descrição:</Text>
           </View>
 
           <View>
-            <Text></Text>
-            <TextInput></TextInput>
+            <Text style={{ color: 'white', fontSize: 20, marginHorizontal: 20 }}>Seus Dados</Text>
           </View>
 
+          <TextInput
+            style={{ backgroundColor: 'white', marginHorizontal: 20, margin: 10, padding: 5, marginLeft: 10, borderRadius: 10 }}
+            placeholder='Nome'
+            placeholderTextColor={'#c1c1c1'}
+          />
+
+          <TextInput
+            style={{ backgroundColor: 'white', marginHorizontal: 20, margin: 10, padding: 5, marginLeft: 10, borderRadius: 10 }}
+            placeholder='Email'
+            placeholderTextColor={'#c1c1c1'}
+          />
+
+          <TextInput
+            style={{ backgroundColor: 'white', marginHorizontal: 20, margin: 10, padding: 5, marginLeft: 10, borderRadius: 10 }}
+            placeholder='Contato'
+            placeholderTextColor={'#c1c1c1'}
+          />
+
+          <AppButtonWhite title="Inscrever-se" style={{ margin: 10 }} />
 
         </View>
       </View>
     </View>
   );
 };
-
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  b1: {
-    width: 490,
-    height: 1100,
-    backgroundColor: 'black',
-  },
-  b2: {
-    width: 400,
-    height: 800,
-    backgroundColor: '#4A5C6A',
-    left: 50,
-    top: 100,
-    borderRadius: 20,
-  },
-  input: {
-    width: 370,
-    height: 45,
-    borderWidth: 2,
-    borderRadius: 10,
-    backgroundColor: 'white',
-    color: 'white',
-    borderColor: 'black',
-    padding: 10,
-    fontSize: 20,
-    top: 200,
-    left: 15,
-  },
-  input1: {
-    width: 170,
-    height: 45,
-    borderWidth: 2,
-    borderRadius: 10,
-    backgroundColor: 'white',
-    color: 'white',
-    borderColor: 'black',
-    padding: 10,
-    fontSize: 20,
-    top: 220,
-    left: 15,
-  },
-  input2: {
-    width: 170,
-    height: 45,
-    borderWidth: 2,
-    borderRadius: 10,
-    backgroundColor: 'white',
-    color: 'white',
-    borderColor: 'black',
-    padding: 10,
-    fontSize: 20,
-    top: 175,
-    left: 215,
-  },
-  input3: {
-    width: 370,
-    height: 45,
-    borderWidth: 2,
-    borderRadius: 10,
-    backgroundColor: 'white',
-    color: 'white',
-    borderColor: 'black',
-    padding: 10,
-    fontSize: 20,
-    top: 200,
-    left: 15,
-  },
-  input4: {
-    width: 370,
-    height: 80,
-    borderWidth: 2,
-    borderRadius: 10,
-    backgroundColor: 'white',
-    color: 'white',
-    borderColor: 'black',
-    padding: 10,
-    fontSize: 20,
-    top: 220,
-    left: 15,
-  },
-  button: {
-    width: 370,
-    height: 39,
-    left: 15,
-    top: 240,
-    backgroundColor: '#4F4F4F',
-    borderRadius: 10,
-    borderWidth: 2,
-  },
-  text: {
-    color: 'white',
-    textAlign: "center",
-    padding: 10,
-  },
-  text1: {
-    left: 60,
-    top: -16,
-  },
-  text2: {
-    left: 50,
-    top: -17,
-  },
-  text3: {
-    left: 55,
-    top: -17,
-  },
-  text4: {
-    left: 65,
-    top: -17,
-    position: "relative"
-  },
-  fonte: {
-    fontSize: 15,
-    fontWeight: "bold",
-  },
-  image: {
-    position: "relative",
-    height: 150,
-    width: 200,
-    left: 95,
-    top: -280,
-  },
-
-});
 
 export default Dados;

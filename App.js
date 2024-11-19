@@ -1,5 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import TelaLogin from './src/telas/TelaLogin';
 import TelaCriarConta from './src/telas/TelaCriarConta';
@@ -8,7 +10,7 @@ import TelaPerfil from './src/telas/TelaPerfil';
 import TelaDados from './src/telas/TelaDados';
 
 const YourApp = () => {
-  const Stack = createDrawerNavigator();
+  const Stack = createStackNavigator();
 
   return (
     <NavigationContainer>
