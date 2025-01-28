@@ -10,7 +10,7 @@ import TelaPerfil from './src/telas/TelaPerfil';
 import TelaDados from './src/telas/TelaDados';
 
 const YourApp = () => {
-  const Stack = createStackNavigator();
+  const Stack = createDrawerNavigator();
 
   return (
     <NavigationContainer>

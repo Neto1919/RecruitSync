@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Checkbox } from 'react-native-ui-lib';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, Image } from 'react-native';
 import AppButton from '../../componentes/AppButton';
 import styles from '../../../styles';
 import AppLink from '../../componentes/AppLink';
@@ -9,13 +9,16 @@ const Acessarconta = ({ navigation }) => {
   const [save, setSave] = useState(false);
 
   return (
+
     <View style={styles.container}>
-      <View style={styles.b1}>
-        <Text style={[styles.title, { marginBottom: 50 }]}>Access your account</Text>
+      <View style={[styles.b1, { marginTop: -50 }]}>
+        <Text style={[styles.title, { marginBottom: 50}]}>Access your account</Text>
 
-        <Text style={{ color: 'white', marginLeft: 50, marginTop: -40, fontSize: 15 }}>Do you want to create an account ?</Text>
+        <Text style={{ color: 'white', marginLeft: 50, marginRight: 200, marginTop: -40, fontSize: 15 }}>Do you want to create an account ?</Text>
 
-        <AppLink title="Click here" style={{ marginLeft: 190, marginTop: -18, margin: 40 }} onPress={() => navigation.navigate("Criar conta")} />
+        <View style={{marginTop: -30, left: 60}}>
+          <AppLink title="Click here" style={{ marginHorizontal: 150, marginLeft: 250, marginTop: 10, margin: 10 }} onPress={() => navigation.navigate("Criar conta")} />
+        </View>
 
         <TextInput
           style={styles.input}
