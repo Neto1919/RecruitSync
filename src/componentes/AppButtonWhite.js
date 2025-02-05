@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import ConfettiCannon from 'react-native-confetti-cannon'; // Certifique-se de instalar esta biblioteca
 
 const AppButtonWhite = (props) => {
     const color = props.color || 'black';
@@ -7,14 +8,19 @@ const AppButtonWhite = (props) => {
     const borderColor = props.borderColor || 'white';
     const title = props.title || '?title?';
 
+    const handlePress = () => {
+        props.onPress();
+        // Aqui você pode adicionar a lógica para disparar o confete
+        <ConfettiCannon count={200} origin={{ x: 0, y: 0 }} />
+    };
+
     return (
-        <TouchableOpacity onPress={props.onPress}>
+        <TouchableOpacity onPress={handlePress}>
             <View style={{ ...props.style, backgroundColor: backgroundColor, borderColor: borderColor, borderWidth: 1, alignItems: 'center', padding: 10, borderRadius: 10 }}>
                 <Text style={{ color: color, fontWeight: 'bold' }}>{title}</Text>
             </View>
         </TouchableOpacity>
     );
 }
-
 
 export default AppButtonWhite;

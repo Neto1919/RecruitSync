@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+'use client';
+import { useState, useEffect } from 'react';
 import AppWhite from '../../componentes/AppWhite';
 import styles from '../../../styles';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 const Perfil = ({ navigation }) => {
+
+  const [alunos, setAlunos] = useState([]);
+  const [toggle, setToggle] = useState(true);
+
+  useEffect(() => {
+    const fetchAlunos = async () => {
+      const response = await fetch('http://192.168.x.x:3000/api/alunos');
+      const data = await response.json();
+      setAlunos(data);
+    }
+
+    fetchAlunos();
+  }, [toggle])
+
   return (
 
     <View>
@@ -14,7 +29,7 @@ const Perfil = ({ navigation }) => {
 
       <View style={styles.container}>
         <View style={styles.b1}>
-          <View style={{ backgroundColor: '#4A5C6A', width: 400, height: 700, marginHorizontal: 45, borderRadius: 10, marginTop: -950 }}>
+          <View style={{ backgroundColor: '#4A5C6A', width: 400, height: 650, marginHorizontal: 45, borderRadius: 10, marginTop: -950 }}>
 
             <View>
               <Image
@@ -48,13 +63,6 @@ const Perfil = ({ navigation }) => {
               <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20, padding: 3, marginHorizontal: 20 }}>Contato</Text>
               <View style={{ backgroundColor: 'white', width: 360, borderRadius: 10, marginHorizontal: 20 }}>
                 <Text style={{ margin: 5, marginHorizontal: 15, fontWeight: 'bold' }}>(83) 98576-3483</Text>
-              </View>
-            </View>
-
-            <View style={{ marginTop: 10 }}>
-              <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20, padding: 3, marginHorizontal: 20 }}>Endereço</Text>
-              <View style={{ backgroundColor: 'white', width: 360, borderRadius: 10, marginHorizontal: 20 }}>
-                <Text style={{ margin: 5, marginHorizontal: 15, fontWeight: 'bold' }}>Rua ceu azul, monte olipico, atenas</Text>
               </View>
             </View>
 
