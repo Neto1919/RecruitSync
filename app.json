@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "IfGecomp",
-    "slug": "IfGecomp",
+    "name": "RecruitSync",
+    "slug": "RecruitSync",
     "newArchEnabled": true,
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/imagens/rsyy.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/imagens/rsyy.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/imagens/rsyy.png",
         "backgroundColor": "#ffffff"
       }
     },

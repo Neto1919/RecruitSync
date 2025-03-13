@@ -4,6 +4,7 @@ import AppButton from '../../componentes/AppButton';
 import styles from '../../../styles';
 import { Text, View, TextInput } from 'react-native';
 import AppLink from '../../componentes/AppLink';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 const CriaConta = ({ navigation }) => {
   const [save, setSave] = useState(false);
@@ -11,21 +12,42 @@ const CriaConta = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.b1}>
-        <Text style={[styles.title, { marginBottom: 3 }]}>Create an account</Text>
+        <Text style={[styles.title, { marginBottom: hp('2%'), fontSize: wp('10%') }]}>Create an account</Text>
 
-        <View style={{ flexDirection: 'row', }}>
-          <Text style={{ color: 'white', marginTop: 10, marginLeft: 70, marginVertical: 50 }}>Already have an account ?</Text>
-          <AppLink title="Log in" style={{ margin: 10 }} onPress={() => navigation.navigate("Acessar conta")} />
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: hp('2%') }}>
+          <Text style={{ color: 'white', marginTop: hp('-3%'), marginLeft: wp('13%'), fontSize: wp('4%') }}>Already have an account?</Text>
+          <AppLink title="Log in" style={{ margin: 10, marginLeft: wp('5%'), marginTop: hp('-2%') }} onPress={() => navigation.navigate("Acessar conta")} />
         </View>
 
         <TextInput
-          style={{ marginLeft: 10, borderWidth: 2, borderColor: 'white', color: 'white', fontWeight: 'bold', marginHorizontal: 270, borderRadius: 10, padding: 10, margin: 10 }}
-          placeholder='Fletcher'
+          style={{
+            marginLeft: wp('2%'),
+            borderWidth: 2,
+            borderColor: 'white',
+            color: 'white',
+            fontWeight: 'bold',
+            marginHorizontal: wp('55%'),
+            borderRadius: 10,
+            padding: 10,
+            margin: 10,
+          }}
+          placeholder='First name'
           placeholderTextColor={'#c1c1c1'}
         />
 
         <TextInput
-          style={{ marginLeft: 250, borderWidth: 2, borderColor: 'white', color: 'white', fontWeight: 'bold', marginHorizontal: 10, marginTop: -63, borderRadius: 10, padding: 10, margin: 10 }}
+          style={{
+            marginLeft: wp('50%'),
+            borderWidth: 2,
+            borderColor: 'white',
+            color: 'white',
+            fontWeight: 'bold',
+            marginHorizontal: wp('3.2%'),
+            borderRadius: 10,
+            padding: 10,
+            margin: 10,
+            marginTop: hp('-5.3%')
+          }}
           placeholder='Last name'
           placeholderTextColor={'#c1c1c1'}
         />
@@ -43,18 +65,16 @@ const CriaConta = ({ navigation }) => {
           secureTextEntry
         />
 
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <Checkbox style={{ marginLeft: 10, marginTop: 10 }} color="white" value={save} onValueChange={() => setSave(!save)} />
-          <Text style={{ flex: 1, color: 'white', marginTop: 10, marginLeft: 10 }} >I agree to the</Text>
-          <Text style={{ color: 'blue', marginTop: 10, marginLeft: 10, marginHorizontal: 230 }}>Terms e Conditions</Text>
-
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: hp('2%') }}>
+          <Checkbox style={{ marginLeft: 10 }} color="white" value={save} onValueChange={() => setSave(!save)} />
+          <Text style={{ color: 'white', marginLeft: 10 }}>I agree to the</Text>
+          <Text style={{ color: 'blue', marginLeft: 10 }}>Terms and Conditions</Text>
         </View>
 
         <AppButton title="Create account" style={{ margin: 10 }} onPress={() => navigation.navigate("Acessar conta")} />
-
       </View>
     </View>
   );
 }
 
-export default CriaConta; 
+export default CriaConta;
